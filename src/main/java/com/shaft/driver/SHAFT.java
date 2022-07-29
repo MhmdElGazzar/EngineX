@@ -4,7 +4,6 @@ import com.shaft.api.RequestBuilder;
 import com.shaft.api.RestActions;
 import com.shaft.cli.FileActions;
 import com.shaft.cli.TerminalActions;
-import com.shaft.db.DatabaseActions;
 import com.shaft.gui.browser.BrowserActions;
 import com.shaft.gui.browser.WebDriverBrowserActions;
 import com.shaft.gui.element.ElementActions;
@@ -149,16 +148,6 @@ public class SHAFT {
         }
     }
 
-    public static class DB {
-        public DatabaseActions performDatabaseActions(DatabaseActions.DatabaseType databaseType, String ip, String port, String name, String username,
-                                                      String password) {
-            return new DatabaseActions(databaseType, ip, port, name, username, password);
-        }
-
-        public DatabaseActions performDatabaseActions(String customConnectionString) {
-            return new DatabaseActions(customConnectionString);
-        }
-    }
 
     public static class Validations {
         public static WizardHelpers.StandaloneAssertions assertThat() {

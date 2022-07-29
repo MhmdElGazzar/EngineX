@@ -4,8 +4,6 @@ import com.epam.healenium.SelfHealingDriver;
 import com.shaft.api.RestActions;
 import com.shaft.cli.FileActions;
 import com.shaft.cli.TerminalActions;
-import com.shaft.db.DatabaseActions;
-import com.shaft.db.DatabaseActions.DatabaseType;
 import com.shaft.driver.DriverFactory.DriverType;
 import com.shaft.gui.browser.BrowserActions;
 import com.shaft.gui.element.JavaScriptWaitManager;
@@ -181,23 +179,7 @@ public class DriverFactoryHelper {
         return new TerminalActions();
     }
 
-    /**
-     * Creates a new Database driver instance to facilitate using the Database Actions Library
-     *
-     * @param databaseType database type that you want to connect with:
-     *                     DatabaseType.MY_SQL ,SQL_SERVER,POSTGRE_SQL.
-     * @param ip           IP address that has database installation that we need to
-     *                     connect to (e.g. 72.55.136.25)
-     * @param port         port of database installation on the server (e.g. 3306)
-     * @param name         database name that you need to connect to
-     * @param username     database username
-     * @param password     password of database user
-     * @return new database driver instance
-     */
-    protected static DatabaseActions getDatabaseDriver(DatabaseType databaseType, String ip, String port, String name, String username,
-                                                       String password) {
-        return new DatabaseActions(databaseType, ip, port, name, username, password);
-    }
+
 
     /**
      * Terminates the desired sikuli app instance
